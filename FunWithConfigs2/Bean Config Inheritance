@@ -1,0 +1,5 @@
+For configuration inheritance:
+use @Import(configurationclassname.class) under the @Configuration
+annotation in the child class
+
+now you can refer to the parent class in child without defining parent bean

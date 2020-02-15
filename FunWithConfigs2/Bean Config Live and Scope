@@ -1,0 +1,21 @@
+Bean lifecycle callbacks can be done w/o xml files:
+
+set up a class with init() and destruction() methods and then in @Bean add
+(initMethod = "name of init method in class", destroyMethod = "name of destroy method in class")
+return the class as an object
+
+EXAMPLE: 
+
+@Configuration
+public class AppConfig {
+   @Bean(initMethod = "init", destroyMethod = "cleanup" )
+   public Foo foo() {
+      return new Foo();
+   }
+}
+
+
+------------------------------------------------------------------------
+
+
+Bean scopes can be specified with @Scope("scope name") under @Bean
